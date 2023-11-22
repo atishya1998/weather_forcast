@@ -1,0 +1,94 @@
+<div [ngStyle]="getBackgroundStyle()">
+  <!-- src/app/main-screen/main-screen.component.html -->
+  <div class="container mt-5">
+    <h1 class="mb-4">Weather App</h1>
+    <div class="mb-3">
+      <input type="text" class="form-control" [(ngModel)]="cityName" placeholder="Enter city name">
+
+      <button class="btn btn-primary mb-3" (click)="searchWeather()">Search</button>
+    </div>
+
+    <br>
+    <br>
+<!-- Display Top 5 Traffic Updates -->
+
+
+    <div class="container">
+
+      <div *ngIf="weatherDetails">
+        <h2>Today's Weather in {{ cityName }}</h2>
+        <!-- Display current weather -->
+        <div class="current-weather">
+          <p>Weather Code:{{ weatherDetails?.weather_code }}</p>
+          <p>Current Time: {{ weatherDetails?.time }} </p>
+          <p>Temperature: {{ weatherDetails?.temperature_2m }} °C</p>
+          <p>Rain: {{ weatherDetails?.rain }} mm</p>
+          <p>Relative Humidity: {{ weatherDetails?.relative_humidity_2m }} %</p>
+          <p>Wind Speed: {{ weatherDetails?.wind_speed_10m }} km-per-hr</p>
+
+          <h2>This week's weather in {{ cityName }}</h2>
+          <!-- Add more details as needed -->
+        </div>
+
+
+
+
+
+
+        <!-- Display forecast for next 7 days -->
+        <!--
+
+<div class="weekly-forecast">
+  <div *ngFor="let day of weeklyForecast" class="forecast-card" (click)="showDetails(day)">
+    <h4>Weather Code:{{ day?.weather_code }}</h4>
+    <p>Temperature: {{ day?.temperature_2m }} °C</p>
+    <p>Rain: {{ day?.rain }} mm</p>
+
+  </div>
+</div>
+</div>
+-->
+        <!--
+<div class="weekly-forecast-container">
+  <div class="weekly-forecast" #forecastContainer>
+    <div *ngFor="let day of weeklyForecast" class="forecast-card" (click)="showDetails(day)">
+      <h4>{{ day?.weather_code }}</h4>
+      <p>Date: {{ day?.time | date: 'shortDate' }}</p>
+      <p>Sunrise: {{ day?.sunrise | date: 'shortTime' }}</p>
+      <p>Sunset: {{ day?.sunset | date: 'shortTime' }}</p>
+      <p>Temperature: {{ day?.temperature_2m }} °C</p>
+      <p>Rain: {{ day?.rain }} mm</p>
+      <p>Wind Speed: {{ day?.wind_speed_10m }} km/h</p>
+      <p>Relative Humidity: {{ day?.relative_humidity_2m }}%</p>
+
+    </div>
+  </div>
+-->
+        <div class="weekly-forecast-container">
+
+          <div class="weekly-forecast" #forecastContainer>
+            <button id="wButton" *ngFor="let day of weeklyForecast" (click)="openDetailsPage(day)">
+              <span class="icon"><i class="fas fa-calendar-alt"></i></span>
+              <!--<h4>{{ day?.weather_code }}</h4> -->
+              <p>Date: {{ day?.time | date: 'shortDate' }}</p>
+              <p>Sunrise: {{ day?.sunrise | date: 'shortTime' }}</p>
+              <p>Sunset: {{ day?.sunset | date: 'shortTime' }}</p>
+              <p>Temperature: {{ day?.temperature_2m }} °C</p>
+              <!--
+<p>Rain: {{ day?.rain }} mm</p>
+<p>Wind Speed: {{ day?.wind_speed_10m }} km/h</p>
+<p>Relative Humidity: {{ day?.relative_humidity_2m }}%</p>
+-->
+            </button>
+          </div>
+
+        </div>
+      </div>
+      <br>
+
+      <router-outlet></router-outlet>
+
+    <!--  <button (click)="reset()">CLEAR</button> -->
+    </div>
+  </div>
+</div>

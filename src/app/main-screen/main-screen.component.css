@@ -1,0 +1,109 @@
+/* src/app/main-screen/main-screen.component.css */
+/*
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+*/
+
+input {
+  width: 70%;
+  padding: 8px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px;
+  cursor: pointer;
+}
+
+h2, h3 {
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* main-screen.component.css */
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.current-weather {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.weekly-forecast-container {
+  max-height: 300px; /* Adjust the maximum height as needed */
+  overflow-y: auto;
+}
+.weekly-forecast {
+  display: flex;
+ /* justify-content: space-between; */
+ width: max-content;
+}
+
+.forecast-card {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.forecast-card:hover {
+  background-color: #f0f0f0;
+}
+
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.scroll-button:hover {
+  background-color: #dddd;
+}
+
+
+/* main-screen.component.css */
+
+#wButton {
+  background-color: #afac4c9e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#wButton .icon {
+  margin-right: 8px;
+}

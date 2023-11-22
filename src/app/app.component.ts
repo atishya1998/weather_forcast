@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppStateService } from './app-state.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'weather-app';
+  constructor(private appStateService: AppStateService) {}
+  resetApp(): void {
+    // Clear the selected day when the app is reset
+    this.appStateService.setSelectedDay(" ");
+  }
 }

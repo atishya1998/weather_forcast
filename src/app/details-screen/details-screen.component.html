@@ -1,0 +1,49 @@
+<!--
+  <div *ngFor="let day of dailyForecast">
+  <h2>Details for {{ day.time }}</h2>
+
+  <div>
+    <div>{{ day.time }}</div>
+  <div>Sunrise: {{ day.sunrise }}</div>
+  <div>Sunset: {{ day.sunset }}</div>
+  <div>Weather Code: {{ day.weather_code }}</div>
+  <div>Temperature: {{ day.temperature_2m }}</div>
+  <div>Rain: {{ day.rain }}</div>
+  <div>Wind Speed: {{ day.wind_speed_10m }}</div>
+  <div>Relative Humidity: {{ day.relative_humidity_2m }}</div>
+
+    <div>
+       </div>
+  </div>
+
+
+  <div style="width: 80%; margin: auto;">
+
+  </div>
+</div>
+-->
+
+
+
+<div style="background-color:#33475b18">
+  <i class="fas fa-sun"></i>
+  <h3>Details for {{ selectedDay }}</h3>
+  <!-- Display detailed information for the selected day using selectedDayData -->
+  <!-- Modify this section based on your data structure -->
+  <p>Temperature: {{ selectedDayData.daily.temperature_2m }} C</p>
+ <!-- <p>Sunrise: {{ selectedDayData.daily.sunrise }}</p>
+  <p>Sunset: {{ selectedDayData.daily.sunset }}</p>
+ -->
+  <p>Weather Code: {{ selectedDayData.daily.weather_code }}</p>
+  <p>Rain: {{ selectedDayData.daily.rain }} mm</p>
+  <p>Wind Speed: {{ selectedDayData.daily.wind_speed_10m}} km/h</p>
+
+  <!-- Add more details as needed -->
+</div>
+<!-- Display the hourly chart -->
+<div>
+  <h3>Hourly Temperature Chart for {{ selectedDay }}</h3>
+  <canvas #hourlyChart width="400" height="200"></canvas>
+</div>
+<!-- Display icons for weather conditions -->
+
